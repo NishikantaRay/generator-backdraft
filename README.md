@@ -17,6 +17,19 @@ npm install -g generator-backdraft
 Then generate your new project:
 yo backdraft
 ```
+## Add .env file 
+```
+DATABASE_TEST = 
+JWT_SECRET = 
+APP_PORT = 3000
+DATABASE = 
+NODE_ENV = 'test'
+API_VERSION='v1'
+```
+Then Run 
+```
+npm start
+```
 ## Features
 
 - Quickly scaffold projects with predefined templates and structures.
