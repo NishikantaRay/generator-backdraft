@@ -1,15 +1,14 @@
 {
   "name": "generator-backdraft",
-  "version": "0.0.0",
+  "version": "1.0.1",
   "description": "Implying the tool's ability to forge and shape Node.js backend code.",
   "homepage": "",
   "author": {
     "name": "NishikantaRay",
-    "email": "nishikantaray1@gmail.com",
-    "url": ""
+    "email": "nishikantaray1@gmail.com"
   },
   "files": [
-    "generators"
+    "app"
   ],
   "main": "generators/index.js",
   "keywords": [
@@ -77,6 +76,6 @@
     "pretest": "eslint .",
     "test": "jest"
   },
-  "repository": "NishikantaRay/generator-backdraft",
+  "repository": "https://github.com/NishikantaRay/generator-backdraft.git",
   "license": "MIT"
 }
