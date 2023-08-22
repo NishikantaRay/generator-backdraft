@@ -12,10 +12,16 @@
     "app"
   ],
   "keywords": [
-    "NodeJs",
-    "ExpressJs",
-    "MongoDB & Basic Auth Code(LOGIN & SIGNUP)",
-    "yeoman-generator"
+    "yeoman",
+    "generator",
+    "node.js",
+    "scaffold",
+    "application",
+    "mongodb",
+    "mongoose",
+    "authentication",
+    "api",
+    "project setup"
   ],
   "dependencies": {
     "yeoman-generator": "^3.1.1",
