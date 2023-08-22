@@ -8,9 +8,7 @@ module.exports = class extends Generator {
   prompting() {
     // Have Yeoman greet the user.
     this.log(
-      yosay(
-        `Welcome to the glorious ${chalk.red("generator-backdraft")} generator!`
-      )
+      yosay(`Welcome to the glorious ${chalk.red("backdraft")} generator!`)
     );
 
     const prompts = [
@@ -21,9 +19,21 @@ module.exports = class extends Generator {
         default: "myapp"
       },
       {
+        type: "input",
+        name: "description",
+        message: "App Description",
+        default: "My App"
+      },
+      {
         type: "confirm",
         name: "mongodb",
         message: "Install MongoDB and Mongoose?",
+        default: true
+      },
+      {
+        type: "confirm",
+        name: "auth",
+        message: "Do you want to add authentication Api?",
         default: true
       }
     ];
@@ -45,16 +55,25 @@ module.exports = class extends Generator {
       }
     };
 
-    if (!this.props.mongodb)
-      copyOpts.globOptions.ignore.push(src + "/mongoose.js");
-
+    if (!this.props.mongodb) copyOpts.globOptions.ignore.push(src + "/config");
+    if (!this.props.auth) {
+      copyOpts.globOptions.ignore.push(
+        src + "/services",
+        src + "/models",
+        src + "/routes",
+        src + "/controller",
+        src + "/validators"
+      );
+    }
     this.fs.copy(src, dest, copyOpts);
 
     const files = ["index.js", "package.json"];
 
     const opts = {
       name: this.props.name,
-      mongodb: this.props.mongodb
+      description: this.props.description,
+      mongodb: this.props.mongodb,
+      auth: this.props.auth
     };
 
     files.forEach(file => {
