@@ -7,8 +7,8 @@ import database from "./config/database.js";
 <% if (auth) { %>
 import Routes from "./routes/index.js";
 <%}%>
-const api_version = process.env.API_VERSION;
 dotenv.config({ path: ".env" });
+const api_version = process.env.API_VERSION;
 const app = express();
 <% if (mongodb) { %>
 database();
