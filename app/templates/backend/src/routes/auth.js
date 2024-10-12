@@ -1,12 +1,12 @@
 import express from "express";
-const router = express.Router();
 import {
   newUserValidator,
   loginValidator,
 } from "../validators/joi.validator.js";
-import { userRegister, userLogin } from "../controller/user.js";
+const router = express.Router();
+import { userRegister, userLogin } from "../services/user.js";
+router.post("/login", loginValidator, userLogin);
 
 router.post("/register", newUserValidator, userRegister);
-router.post("/login", loginValidator, userLogin);
 
 export default router;
